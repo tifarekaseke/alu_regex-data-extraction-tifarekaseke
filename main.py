@@ -11,3 +11,18 @@ def extract_data(your_string):
     phone_numbers = re.findall(phone_pattern, your_string)
     currency_amounts = re.findall(currency_pattern, your_string)
 
+    return {
+        "emails": emails,
+        "urls": urls,
+        "phone_numbers": phone_numbers,
+        "currency_amounts": currency_amounts,
+    }
+
+# Example usage
+your_string = """
+Contact us at user@example.com or visit https://www.example.com. 
+Call (123) 456-7890. Price is $19.99. 
+Also check https://subdomain.example.org/page for more info.
+"""
+extracted_data = extract_data(your_string)
+print(extracted_data)
